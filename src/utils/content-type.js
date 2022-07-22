@@ -23,7 +23,7 @@ export const detectContentType = async (path, source) => {
 
       if (done) return { source: reader }
 
-      fileSignature = await fileType.fromBuffer(value.slice())
+      fileSignature = await fileType.fileTypeFromBuffer(value.slice())
 
       source = (async function * () { // eslint-disable-line require-await
         yield value
